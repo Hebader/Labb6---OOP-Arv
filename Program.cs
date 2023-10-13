@@ -114,9 +114,9 @@ namespace Labb6___OOP_Arv
             Weight = weight;
         }
 
-        public void spin()
+        public void roll()
         {
-            Console.WriteLine("The dog is spinnig");
+            Console.WriteLine("The dog is rolling");
         }
     }
     public class Chihuahua: Dog
