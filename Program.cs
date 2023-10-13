@@ -82,8 +82,9 @@ namespace Labb6___OOP_Arv
         String Feathers;
         public Bird(string breed_, string color_ = null, int Age_ = 0, string feathers = null)
         {
-            color_ = Color;
+            
             breed_ = Breed;
+            color_ = Color;
             Age_ = Age;
             Feathers = feathers;
         }
@@ -97,4 +98,30 @@ namespace Labb6___OOP_Arv
             Console.WriteLine("The" + Breed + " is whistling");
         }
     }
+
+    public class Bulldog: Dog
+    {
+        public string Weight;
+
+    }
+    public class Chihuahua: Dog
+    {
+
+        public string Lenght;
+
+        public void rest()
+        {
+            Console.WriteLine("The " + Breed + "is resting");
+        }
+
+
+        public void spin ()
+        {
+            Console.WriteLine("The" + Breed + "is spinnig");
+        }
+
+            
+    }
+
+
 }
