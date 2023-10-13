@@ -10,7 +10,12 @@ namespace Labb6___OOP_Arv
     {
         static void Main(string[] args)
         {
-           
+           Cat cat = new Cat ();
+           cat.makeSound();
+           Dog dog = new Dog ();
+           dog.makeSound();
+           Bird bird = new Bird();
+           bird.makeSound();
         }
     }
 
@@ -48,18 +53,18 @@ namespace Labb6___OOP_Arv
 
         public void Eat()
         {
-            Console.WriteLine(Breed + "is eating");
+            Console.WriteLine("The dog is eating");
         }
        public void makeSound()
         {
-            Console.WriteLine( "The" + Breed +  "is barking");
+            Console.WriteLine( "The dog is barking");
         }
     }
 
-    public class Cat : Animal
+    public class Cat:Animal
     {
         String Eyecolor;
-        public Cat(string breed_, string color_ = null, int Age_ =0, string eyecolor_ =null)
+        public Cat(string breed_ =null, string color_ = null, int Age_ =0, string eyecolor_ =null)
         {
             color_ = Color;
             breed_ = Breed;
@@ -69,18 +74,18 @@ namespace Labb6___OOP_Arv
 
         public void Cuddle()
         {
-            Console.WriteLine("The " + Breed + "is cuddling");
+            Console.WriteLine("The cat is cuddling");
         }
 
         public void makeSound()
         {
-            Console.WriteLine("The" + Breed + "meowing");
+            Console.WriteLine("The cat is meowing");
         }
     }
     public class Bird : Animal
     {
         String Feathers;
-        public Bird(string breed_, string color_ = null, int Age_ = 0, string feathers = null)
+        public Bird(string breed_=null, string color_ = null, int Age_ = 0, string feathers = null)
         {
             
             breed_ = Breed;
@@ -90,35 +95,44 @@ namespace Labb6___OOP_Arv
         }
         public void hunt() 
         {
-            Console.WriteLine("The" + Breed + " is hunting");
+            Console.WriteLine("The bird is hunting");
         }
 
         public void makeSound()
         {
-            Console.WriteLine("The" + Breed + " is whistling");
+            Console.WriteLine("The bird is whistling");
         }
     }
 
     public class Bulldog: Dog
     {
-        public string Weight;
+        string Weight;
 
+        public Bulldog (string weight)
+        {
+            Weight = weight;
+        }
+
+        public void spin()
+        {
+            Console.WriteLine("The dog is spinnig");
+        }
     }
     public class Chihuahua: Dog
     {
 
-        public string Lenght;
+        string Lenght;
+
+        public Chihuahua (string lenght)
+        {
+            lenght = Lenght;
+        }
 
         public void rest()
         {
-            Console.WriteLine("The " + Breed + "is resting");
+            Console.WriteLine("The dog is resting");
         }
 
-
-        public void spin ()
-        {
-            Console.WriteLine("The" + Breed + "is spinnig");
-        }
 
             
     }
