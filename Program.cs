@@ -19,28 +19,29 @@ namespace Labb6___OOP_Arv
         }
     }
 
-    public class Animal
+    public class Animal // skapar klassen Animal
     {
-       public string Breed { get; set; }
+        //properties
+       public string Breed { get; set; } //"get/set" för att kunna användas i andra klasser
        public string Color { get; set; } 
        public  int Age {  get; set; }   
 
      
 
-        public void Jump ()
+        public void Jump () // Skapar en metod
         {
-            Console.WriteLine(Breed + " is jumping "); 
+            Console.WriteLine("Jumping"); //Utskrift
         }
         public void Run () 
         {
-            Console.WriteLine(Breed + " is running");
+            Console.WriteLine("Running");
         }
         public void play () 
         {
-            Console.WriteLine(Breed + "is playing");
+            Console.WriteLine("playing");
         }
     }
-    public class Dog : Animal
+    public class Dog : Animal //klassen Dog ärver allt från klassen Animal
     {
         string Size;
         public Dog(string breed_ =null, string color_ = null, int Age_ =0, string size_=null)
