@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
@@ -37,7 +38,7 @@ namespace Labb6___OOP_Arv
     public class Dog : Animal
     {
         string Size;
-        public Dog(string color_, string name_, int Age_, string size_)
+        public Dog(string color_ =null, string name_ =null, int Age_ =0, string size_=null)
         {
             color_ = Color;
             name_ = Name;
@@ -49,13 +50,16 @@ namespace Labb6___OOP_Arv
         {
             Console.WriteLine(Name + "is eating");
         }
-                
+       public void makeSound()
+        {
+            Console.WriteLine( "The" + Name +  "is barking");
+        }
     }
 
     public class Cat : Animal
     {
         String Eyecolor;
-        public Cat(string color_, string name_, int Age_, string eyecolor_)
+        public Cat(string color_ = null, string name_ = null, int Age_ =0, string eyecolor_ =null)
         {
             color_ = Color;
             name_ = Name;
@@ -66,6 +70,11 @@ namespace Labb6___OOP_Arv
         public void Cuddle()
         {
             Console.WriteLine("The " + Name + "is cuddling");
+        }
+
+        public void makeSound()
+        {
+            Console.WriteLine("The" + Name + "meowing");
         }
     }
     public class Bird : Animal
@@ -78,7 +87,12 @@ namespace Labb6___OOP_Arv
             Age_ = Age;
             Feathers = feathers;
         }
-        public void Whistle() 
+        public void hunt() 
+        {
+            Console.WriteLine("The" + Name + " is hunting");
+        }
+
+        public void makeSound()
         {
             Console.WriteLine("The" + Name + " is whistling");
         }
