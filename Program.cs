@@ -26,6 +26,14 @@ namespace Labb6___OOP_Arv
        public string Color { get; set; } 
        public  int Age {  get; set; }   
 
+
+        public Animal (string breed = null, string color =null, int age = 0)
+        {
+            Breed = breed;
+            Color = color;
+            Age = age;
+        }
+
      
 
         public void Jump () // Skapar en metod
@@ -44,7 +52,7 @@ namespace Labb6___OOP_Arv
     public class Dog : Animal //klassen Dog ärver allt från klassen Animal
     {
         string Size;
-        public Dog(string breed_ =null, string color_ = null, int Age_ =0, string size_=null)
+        public Dog(string breed_=null, string color_ = null, int Age_ =0, string size_=null)
         {
             breed_ = Breed;
             color_ = Color;
@@ -64,7 +72,7 @@ namespace Labb6___OOP_Arv
 
     public class Cat:Animal
     {
-        String Eyecolor;
+        String Eyecolor {get; }
         public Cat(string breed_ =null, string color_ = null, int Age_ =0, string eyecolor_ =null)
         {
             color_ = Color;
@@ -85,7 +93,7 @@ namespace Labb6___OOP_Arv
     }
     public class Bird : Animal
     {
-        String Feathers;
+        String Feathers{ get; }
         public Bird(string breed_=null, string color_ = null, int Age_ = 0, string feathers = null)
         {
             
@@ -107,9 +115,10 @@ namespace Labb6___OOP_Arv
 
     public class Bulldog: Dog // Arv i två nivåer
     {
-        string Weight;
+        int Weight { get; }
         
-        public Bulldog (string weight)
+        public Bulldog (string breed_ = null, string color_ = null, int Age_ = 0, string size_ = null, int weight = 0)
+            : base(breed_, color_, Age_, size_)
         {
             
             Weight = weight;
