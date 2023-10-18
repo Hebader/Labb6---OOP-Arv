@@ -19,7 +19,7 @@ namespace Labb6___OOP_Arv
         }
     }
 
-    public class Animal // skapar klassen Animal
+    public abstract class Animal // skapar klassen Animal
     {
         //properties
        public string Breed { get; set; } //"get/set" för att kunna användas i andra klasser
@@ -54,11 +54,11 @@ namespace Labb6___OOP_Arv
 
         public void Eat()
         {
-            Console.WriteLine("The dog is eating");
+            Console.WriteLine("The dog is eating.");
         }
        public void makeSound()
         {
-            Console.WriteLine( "The dog is barking");
+            Console.WriteLine( "The dog is barking.");
         }
     }
 
@@ -80,7 +80,7 @@ namespace Labb6___OOP_Arv
 
         public void makeSound()
         {
-            Console.WriteLine("The cat is meowing");
+            Console.WriteLine("The cat is meowing.");
         }
     }
     public class Bird : Animal
@@ -101,16 +101,17 @@ namespace Labb6___OOP_Arv
 
         public void makeSound()
         {
-            Console.WriteLine("The bird is whistling");
+            Console.WriteLine("The bird is whistling.");
         }
     }
 
-    public class Bulldog: Dog
+    public class Bulldog: Dog // Arv i två nivåer
     {
         string Weight;
-
+        
         public Bulldog (string weight)
         {
+            
             Weight = weight;
         }
 
@@ -122,12 +123,15 @@ namespace Labb6___OOP_Arv
     public class Chihuahua: Dog
     {
 
-        string Lenght;
+        int Lenght;
 
-        public Chihuahua (string lenght)
+        public Chihuahua(string breed_ = null, string color_ = null, int Age_ = 0, string size_ = null, int lenght= 0)
+            :base (breed_,color_,Age_,size_)        
         {
-            lenght = Lenght;
+            Lenght = lenght;
+
         }
+
 
         public void rest()
         {
