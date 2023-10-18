@@ -24,7 +24,7 @@ namespace Labb6___OOP_Arv
         //properties
        public string Breed { get; set; } //"get/set" för att kunna användas i andra klasser
        public string Color { get; set; } 
-       public  int Age {  get; set; }   
+       public  int Age { get; set; }   
 
 
         public Animal (string breed = null, string color =null, int age = 0)
@@ -52,11 +52,10 @@ namespace Labb6___OOP_Arv
     public class Dog : Animal //klassen Dog ärver allt från klassen Animal
     {
         string Size;
-        public Dog(string breed_=null, string color_ = null, int Age_ =0, string size_=null)
+        public Dog(string breed_=null, string color_ = null, int age_ =0, string size_=null)
+            :base (breed_,color_,age_)
         {
-            breed_ = Breed;
-            color_ = Color;
-            Age_ = Age;
+        
             size_ = Size;
         }
 
@@ -73,11 +72,10 @@ namespace Labb6___OOP_Arv
     public class Cat:Animal
     {
         String Eyecolor {get; }
-        public Cat(string breed_ =null, string color_ = null, int Age_ =0, string eyecolor_ =null)
+        public Cat(string breed_ =null, string color_ = null, int age_ =0, string eyecolor_ =null)
+            :base (breed_,color_, age_)
         {
-            color_ = Color;
-            breed_ = Breed;
-            Age_ = Age;
+            
             eyecolor_ = Eyecolor;
         }
 
@@ -94,12 +92,11 @@ namespace Labb6___OOP_Arv
     public class Bird : Animal
     {
         String Feathers{ get; }
-        public Bird(string breed_=null, string color_ = null, int Age_ = 0, string feathers = null)
+        public Bird(string breed_=null, string color_ = null, int age_ = 0, string feathers = null)
+            :base (breed_ ,color_, age_) 
         {
             
-            breed_ = Breed;
-            color_ = Color;
-            Age_ = Age;
+     
             Feathers = feathers;
         }
         public void hunt() 
@@ -117,8 +114,8 @@ namespace Labb6___OOP_Arv
     {
         int Weight { get; }
         
-        public Bulldog (string breed_ = null, string color_ = null, int Age_ = 0, string size_ = null, int weight = 0)
-            : base(breed_, color_, Age_, size_)
+        public Bulldog (string breed_ = null, string color_ = null, int age_ = 0, string size_ = null, int weight = 0)
+            : base(breed_, color_, age_, size_) // ärver data från "Dog"
         {
             
             Weight = weight;
@@ -134,8 +131,8 @@ namespace Labb6___OOP_Arv
 
         int Lenght;
 
-        public Chihuahua(string breed_ = null, string color_ = null, int Age_ = 0, string size_ = null, int lenght= 0)
-            :base (breed_,color_,Age_,size_)        
+        public Chihuahua(string breed_ = null, string color_ = null, int age_ = 0, string size_ = null, int lenght= 0)
+            :base (breed_,color_,age_,size_)        
         {
             Lenght = lenght;
 
