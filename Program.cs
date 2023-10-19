@@ -22,12 +22,12 @@ namespace Labb6___OOP_Arv
     public abstract class Animal // skapar klassen Animal
     {
         //properties
-       public string Breed { get; set; } //"get/set" för att kunna användas i andra klasser
+       public string Breed { get; set; } //"get/set" för att sätta värdet i andra klasser
        public string Color { get; set; } 
        public  int Age { get; set; }   
 
 
-        public Animal (string breed = null, string color =null, int age = 0)
+        public Animal (string breed = null, string color =null, int age = 0) // Konstruktor med default värde
         {
             Breed = breed;
             Color = color;
@@ -51,9 +51,9 @@ namespace Labb6___OOP_Arv
     }
     public class Dog : Animal //klassen Dog ärver allt från klassen Animal
     {
-        string Size;
+        string Size; // lägger till en unik egenskap för "Dog"
         public Dog(string breed_=null, string color_ = null, int age_ =0, string size_=null)
-            :base (breed_,color_,age_)
+            :base (breed_,color_,age_) // ärver tidigare egenekskaper 
         {
         
             size_ = Size;
@@ -71,7 +71,7 @@ namespace Labb6___OOP_Arv
 
     public class Cat:Animal
     {
-        String Eyecolor {get; }
+        String Eyecolor {get;}
         public Cat(string breed_ =null, string color_ = null, int age_ =0, string eyecolor_ =null)
             :base (breed_,color_, age_)
         {
@@ -112,7 +112,7 @@ namespace Labb6___OOP_Arv
 
     public class Bulldog: Dog // Arv i två nivåer
     {
-        int Weight { get; }
+        int Weight { get; } // få in värdet med get
         
         public Bulldog (string breed_ = null, string color_ = null, int age_ = 0, string size_ = null, int weight = 0)
             : base(breed_, color_, age_, size_) // ärver data från "Dog"
