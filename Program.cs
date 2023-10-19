@@ -10,8 +10,8 @@ namespace Labb6___OOP_Arv
     {
         static void Main(string[] args)
         {
-           Cat cat = new Cat ();
-           cat.makeSound();
+           Cat cat = new Cat (); //anropar objektet
+           cat.makeSound();  // låter objektet utföra metoden
            Dog dog = new Dog ();
            dog.makeSound();
            Bird bird = new Bird();
@@ -22,12 +22,12 @@ namespace Labb6___OOP_Arv
     public abstract class Animal // skapar klassen Animal
     {
         //properties
-       public string Breed { get; set; } //"get/set" för att sätta värdet i andra klasser
+       public string Breed { get; set; } //"get/set" för att sätta/ändra värdet i andra klasser
        public string Color { get; set; } 
        public  int Age { get; set; }   
 
 
-        public Animal (string breed = null, string color =null, int age = 0) // Konstruktor med default värde
+        public Animal (string breed = null, string color =null, int age = 0) // Konstruktor som innehåller default värden
         {
             Breed = breed;
             Color = color;
@@ -79,7 +79,7 @@ namespace Labb6___OOP_Arv
             eyecolor_ = Eyecolor;
         }
 
-        public void Cuddle()
+        public void Cuddle() //Metod
         {
             Console.WriteLine("The cat is cuddling");
         }
@@ -91,9 +91,9 @@ namespace Labb6___OOP_Arv
     }
     public class Bird : Animal
     {
-        String Feathers{ get; }
+        String Feathers{ get; } //hämta värdet för egenskapen
         public Bird(string breed_=null, string color_ = null, int age_ = 0, string feathers = null)
-            :base (breed_ ,color_, age_) 
+            :base (breed_ ,color_, age_) // ärver dessa egenskaper från "Animal"
         {
             
      
@@ -112,7 +112,7 @@ namespace Labb6___OOP_Arv
 
     public class Bulldog: Dog // Arv i två nivåer
     {
-        int Weight { get; } // få in värdet med get
+        int Weight { get; } // hämta värdet med get
         
         public Bulldog (string breed_ = null, string color_ = null, int age_ = 0, string size_ = null, int weight = 0)
             : base(breed_, color_, age_, size_) // ärver data från "Dog"
